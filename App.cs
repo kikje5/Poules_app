@@ -7,6 +7,8 @@ namespace JuKu_Poules;
 public class App : Game
 {
     private GraphicsDeviceManager _graphics;
+
+
     private SpriteBatch _spriteBatch;
 
     public App()

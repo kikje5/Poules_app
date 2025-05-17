@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JuKu_Poules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b9f732f096f1a8b3c8e6e5149678bd3c37c26ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("JuKu_Poules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JuKu_Poules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
