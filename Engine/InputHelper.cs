@@ -86,7 +86,7 @@ public class InputHelper
 		_currentKeyboardState.GetPressedKeys().Length > 0 &&
 		_previousKeyboardState.GetPressedKeys().Length == 0;
 
-	public bool GetKeyPressed(out Keys key)
+	public bool GeDownKey(out Keys key)
 	{
 		if (_currentKeyboardState.GetPressedKeys().Length > 0)
 		{
@@ -98,5 +98,22 @@ public class InputHelper
 			key = Keys.None;
 			return false;
 		}
+	}
+
+	public bool GetKeyPressed(out Keys key)
+	{
+		if (_currentKeyboardState.GetPressedKeys().Length > 0)
+		{
+			foreach (var k in _currentKeyboardState.GetPressedKeys())
+			{
+				if (_previousKeyboardState.IsKeyUp(k))
+				{
+					key = k;
+					return true;
+				}
+			}
+		}
+		key = Keys.None;
+		return false;
 	}
 }

@@ -17,7 +17,7 @@ public class AssetManager
 		//audioManager.LoadAllAudio(contentManager);
 	}
 
-	public Texture2D GetSprite(string assetName)
+	public Texture2D GetTexture(string assetName)
 	{
 		if (assetName == "")
 		{
