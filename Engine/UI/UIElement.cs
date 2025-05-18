@@ -48,7 +48,7 @@ public abstract class UIElement : ILoopObject
 	}
 	protected UIElementMouseState uiElementMouseState;
 
-	public event Action<UIElement> Clicked;
+	public event Action Clicked;
 
 	protected bool isClicked = false;
 
@@ -93,7 +93,7 @@ public abstract class UIElement : ILoopObject
 
 	protected void OnClicked()
 	{
-		Clicked?.Invoke(this);
+		Clicked?.Invoke();
 	}
 
 	public virtual void Update(GameTime gameTime) { }

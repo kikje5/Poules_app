@@ -7,17 +7,27 @@ namespace JuKu_Poules.Engine.UI;
 
 public class TextInput : UIElement
 {
-	public string Text { get; set; } = string.Empty;
+	private TextElement _text;
+
+	public string Text
+	{
+		get { return _text.Text; }
+		set
+		{
+			_text.Text = value;
+			_text.Position = Position + Size / 2;
+		}
+	}
 
 	public TextInput(Vector2 position, Vector2 size) : base(
-		App.Instance.AssetManager.GetTexture("UI/TextInput/TextInputNormal"),
-		App.Instance.AssetManager.GetTexture("UI/TextInput/TextInputHover"),
-		App.Instance.AssetManager.GetTexture("UI/TextInput/TextInputPressed"),
-		App.Instance.AssetManager.GetTexture("UI/TextInput/TextInputDisabled"),
-		position,
+		App.AssetManager.GetTexture("UI/TextInput/SimpleTextInputNormal"),
+		App.AssetManager.GetTexture("UI/TextInput/SimpleTextInputHover"),
+		App.AssetManager.GetTexture("UI/TextInput/SimpleTextInputPressed"),
+		App.AssetManager.GetTexture("UI/TextInput/SimpleTextInputDisabled"),
+		position - size / 2,
 		size
 		)
-	{ }
+	{ _text = new TextElement("Fonts/TextInputFont"); }
 
 	public override void HandleInput(InputHelper inputHelper)
 	{
@@ -51,17 +61,17 @@ public class TextInput : UIElement
 
 		if (key == Keys.Back)
 		{
-			if (Text.Length > 0)
+			if (_text.Text.Length > 0)
 			{
-				Text = Text.Substring(0, Text.Length - 1);
+				_text.Text = _text.Text.Substring(0, _text.Text.Length - 1);
 			}
 			return;
 		}
-		if (Text.Length >= 40) return;
+		if (_text.Text.Length >= 40) return;
 
 		if (key == Keys.Space)
 		{
-			Text += " ";
+			_text.Text += " ";
 			return;
 		}
 
@@ -70,11 +80,16 @@ public class TextInput : UIElement
 
 		if (inputHelper.ShiftKeyDown)
 		{
-			Text += key.ToString();
+			_text.Text += key.ToString();
 		}
 		else
 		{
-			Text += key.ToString().ToLower();
+			_text.Text += key.ToString().ToLower();
 		}
+	}
+	public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+	{
+		base.Draw(gameTime, spriteBatch);
+		_text.Draw(gameTime, spriteBatch);
 	}
 }

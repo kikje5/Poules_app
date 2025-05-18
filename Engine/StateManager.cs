@@ -6,9 +6,9 @@ namespace JuKu_Poules.Engine;
 
 public class StateManager : ILoopObject
 {
-	public const string GO_TO_PREVIOUS_SCREEN = "GO TO PREVIOUS SCREEN";
-	public const string TITLE_SCREEN = "Title Screen";
-	public const string TEST = "Test";
+	public static string GO_TO_PREVIOUS_SCREEN = "GO TO PREVIOUS SCREEN";
+	public static string TITLE_SCREEN = "Title Screen";
+	public static string TEST = "Test";
 
 
 	private readonly Stack<string> previousGameStates = new Stack<string>();

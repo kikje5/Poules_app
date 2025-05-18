@@ -4,6 +4,7 @@ using JuKu_Poules.Engine;
 using System;
 using Blok3Game.Engine;
 using Microsoft.Xna.Framework.Input;
+using JuKu_Poules.AppStates;
 
 namespace JuKu_Poules;
 
@@ -16,7 +17,7 @@ public class App : Game
     public static App Instance;
     public static Random Random;
     public static Matrix SpriteScale;
-    public AssetManager AssetManager;
+    public static AssetManager AssetManager;
 
     public static Point windowSize;
 
@@ -28,21 +29,29 @@ public class App : Game
     {
         IsMouseVisible = true;
         Graphics = new GraphicsDeviceManager(this);
+
         Content.RootDirectory = "Content";
+        AssetManager = new AssetManager(Content);
         IsMouseVisible = true;
         Instance = this;
 
         InputHelper = new InputHelper();
+
         StateManager = new StateManager();
-        AssetManager = new AssetManager(Content);
 
         SpriteScale = Matrix.CreateScale(1, 1, 1);
         Random = new Random();
+
+        screen = new Point(960, 540);
+        ApplyResolutionSettings(true, true);
     }
 
     protected override void Initialize()
     {
         IsMouseVisible = true;
+        StateManager.AddState(StateManager.TITLE_SCREEN, new TitleScreen());
+
+        StateManager.SwitchTo(StateManager.TITLE_SCREEN);
         base.Initialize();
     }
 

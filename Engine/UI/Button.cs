@@ -5,15 +5,30 @@ namespace JuKu_Poules.Engine.UI;
 
 public class Button : UIElement
 {
+
+	private TextElement _text;
+
+	public string Text
+	{
+		get { return _text.Text; }
+		set
+		{
+			_text.Text = value;
+			_text.Position = Position + Size / 2;
+		}
+	}
 	public Button(Vector2 position, Vector2 size) : base(
-		App.Instance.AssetManager.GetTexture("UI/Buttons/ButtonNormal"),
-		App.Instance.AssetManager.GetTexture("UI/Buttons/ButtonHover"),
-		App.Instance.AssetManager.GetTexture("UI/Buttons/ButtonPressed"),
-		App.Instance.AssetManager.GetTexture("UI/Buttons/ButtonDisabled"),
-		position,
+		App.AssetManager.GetTexture("UI/Buttons/SimpleButtonNormal"),
+		App.AssetManager.GetTexture("UI/Buttons/SimpleButtonHover"),
+		App.AssetManager.GetTexture("UI/Buttons/SimpleButtonPressed"),
+		App.AssetManager.GetTexture("UI/Buttons/SimpleButtonDisabled"),
+		position - size / 2,
 		size
 		)
-	{ }
+	{
+		_text = new TextElement("Fonts/SimpleButtonFont");
+
+	}
 
 	public override void HandleInput(InputHelper inputHelper)
 	{
@@ -44,5 +59,11 @@ public class Button : UIElement
 			isClicked = false;
 			UIElementState = UIElementMouseState.Normal;
 		}
+	}
+
+	public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+	{
+		base.Draw(gameTime, spriteBatch);
+		_text.Draw(gameTime, spriteBatch);
 	}
 }
