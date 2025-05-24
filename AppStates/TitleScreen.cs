@@ -1,9 +1,9 @@
-using JuKu_Poules.Engine;
-using JuKu_Poules.Engine.UI;
+using Mono_Sims.Engine;
+using Mono_Sims.Engine.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace JuKu_Poules.AppStates;
+namespace Mono_Sims.AppStates;
 
 public class TitleScreen : State
 {
@@ -19,7 +19,7 @@ public class TitleScreen : State
 		int ButtonWidth = 192;
 		int ButtonHeight = 48;
 		titleText = new TextElement("Fonts/TitleFont");
-		titleText.Text = "JuKu Poules";
+		titleText.Text = "Mono Sims";
 		titleText.Position = new Vector2(480, 50);
 		Add(titleText);
 
@@ -37,9 +37,5 @@ public class TitleScreen : State
 		exitButton.Clicked += () => App.Instance.Exit();
 		exitButton.Text = "Exit";
 		Add(exitButton);
-
-		textInput = new TextInput(new Vector2(480, 400), new Vector2(ButtonWidth * 2, ButtonHeight));
-		textInput.Text = "";
-		Add(textInput);
 	}
 }

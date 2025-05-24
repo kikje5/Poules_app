@@ -1,9 +1,9 @@
-using JuKu_Poules.Engine;
+using Mono_Sims.Engine;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Microsoft.Xna.Framework;
 
-namespace JuKu_Poules.Engine.UI;
+namespace Mono_Sims.Engine.UI;
 
 public enum UIElementMouseState
 {

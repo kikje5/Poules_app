@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
-namespace JuKu_Poules.Engine;
+namespace Mono_Sims.Engine;
 
 public class State : ILoopObject
 {

@@ -1,2 +1,2 @@
-﻿using var game = new JuKu_Poules.App();
+﻿using var game = new Mono_Sims.App();
 game.Run();

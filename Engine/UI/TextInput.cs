@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace JuKu_Poules.Engine.UI;
+namespace Mono_Sims.Engine.UI;
 
 public class TextInput : UIElement
 {
@@ -55,7 +55,6 @@ public class TextInput : UIElement
 		//if it is clicked, do text input logic
 
 		inputHelper.GetKeyPressed(out Keys key);
-		Console.WriteLine(key);
 
 		if (key == Keys.None) return;
 

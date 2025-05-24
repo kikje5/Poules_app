@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace JuKu_Poules.Engine.UI;
+namespace Mono_Sims.Engine.UI;
 
 public class Button : UIElement
 {

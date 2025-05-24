@@ -1,12 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using JuKu_Poules.Engine;
+using Mono_Sims.Engine;
 using System;
 using Blok3Game.Engine;
 using Microsoft.Xna.Framework.Input;
-using JuKu_Poules.AppStates;
+using Mono_Sims.AppStates;
 
-namespace JuKu_Poules;
+namespace Mono_Sims;
 
 public class App : Game
 {
